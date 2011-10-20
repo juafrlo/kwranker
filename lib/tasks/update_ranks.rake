@@ -10,9 +10,7 @@ namespace :update_rankings do
 
       results_page = query.page(1) rescue nil
       rank = results_page.ranks_of { |result| !result.url.to_s.scan(DOMAIN).blank? }.try(:first) rescue nil
-      unless rank.blank?
-        Measurement.create(:keyword_id => kw.id, :value => rank)
-      end
+      Measurement.create(:keyword_id => kw.id, :value => rank.blank? ? "No en los 100 primeros" : rank)
     end
   end
 end
