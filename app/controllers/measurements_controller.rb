@@ -1,5 +1,5 @@
 class MeasurementsController < ApplicationController
-  #before_filter :authenticate
+  before_filter :authenticate
   
   
   # GET /measurements
