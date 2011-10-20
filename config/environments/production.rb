@@ -58,3 +58,9 @@ Kwranker::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 end
+
+MEASUREMENTS_ID = ENV['MEASUREMENTS_ID']
+MEASUREMENTS_PASS = ENV['MEASUREMENTS_PASS']
+KEYWORDS_ID = ENV['KEYWORDS_ID']
+KEYWORDS_PASS = ENV['KEYWORDS_PASS']
+DOMAIN = ENV['DOMAIN']
