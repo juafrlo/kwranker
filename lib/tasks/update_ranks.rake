@@ -16,7 +16,8 @@ namespace :update_rankings do
           # Rescued utf-8 error
           false
         end
-      }.try(:first) 
+      end
+      rank = rank.try(:first) 
       Measurement.create(:keyword_id => kw.id, :value => rank.to_i == 0 ? nil : rank)
     end
   end
