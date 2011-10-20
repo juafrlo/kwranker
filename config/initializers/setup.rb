@@ -1,0 +1,5 @@
+MEASUREMENTS_ID = 'test'
+MEASUREMENTS_PASS = 'test'
+KEYWORDS_ID = 'test'
+KEYWORDS_PASS = 'test'
+DOMAIN = 'test'

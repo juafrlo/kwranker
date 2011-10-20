@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Keyword:</b>
+  <%= @measurement.keyword_id %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @measurement.value %>
+</p>
+
+
+<%= link_to 'Edit', edit_measurement_path(@measurement) %> |
+<%= link_to 'Back', measurements_path %>

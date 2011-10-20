@@ -1,0 +1,15 @@
+<h1>Rankings</h1>
+
+<table>
+  <tr>
+    <th style="width: 200px">Keywords</th>
+    <th style="width: 200px, align: left;">Rank</th>
+  </tr>
+
+<% @measurements.each do |measurement| %>
+  <tr>
+    <td><%= measurement.keyword.name %></td>
+    <td><%= measurement.value %></td>
+  </tr>
+<% end %>
+</table>
