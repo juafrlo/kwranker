@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'gscraper'
 namespace :update_rankings do
   desc "Updating google ranking for every keyword"  
