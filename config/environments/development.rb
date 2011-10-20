@@ -28,3 +28,9 @@ Kwranker::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 end
+
+MEASUREMENTS_ID = 'test'
+MEASUREMENTS_PASS = 'test'
+KEYWORDS_ID = 'test'
+KEYWORDS_PASS = 'test'
+DOMAIN = 'test'
