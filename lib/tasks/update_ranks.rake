@@ -9,7 +9,14 @@ namespace :update_rankings do
       query = GScraper::Search.query(:query => kw.name, :results_per_page => 100)
 
       results_page = query.page(1) 
-      rank = results_page.ranks_of { |result| !result.url.to_s.scan(DOMAIN).blank? }.try(:first) 
+      rank = results_page.ranks_of do |result| 
+        begin 
+          !result.url.to_s.scan(DOMAIN).blank?
+        rescue
+          # Rescued utf-8 error
+          false
+        end
+      }.try(:first) 
       Measurement.create(:keyword_id => kw.id, :value => rank.to_i == 0 ? nil : rank)
     end
   end
