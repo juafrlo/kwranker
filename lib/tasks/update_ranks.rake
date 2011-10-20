@@ -8,13 +8,15 @@ namespace :update_rankings do
       GScraper::Search::WebQuery.const_set(:SEARCH_URL, "http://#{kw.google_domain}/search")
       query = GScraper::Search.query(:query => kw.name, :results_per_page => 100)
 
-      results_page = query.page(1) 
-      rank = results_page.ranks_of do |result| 
-        begin 
-          !result.url.to_s.scan(DOMAIN).blank?
-        rescue
-          # Rescued utf-8 error
-          false
+      results_page = query.page(1) rescue nil
+      if results_page.present?
+        rank = results_page.ranks_of do |result| 
+          begin 
+            !result.url.to_s.scan(DOMAIN).blank?
+          rescue
+            # Rescued utf-8 error
+            false
+          end
         end
       end
       rank = rank.try(:first) 
