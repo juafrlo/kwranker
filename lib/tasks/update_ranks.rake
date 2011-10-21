@@ -13,9 +13,10 @@ namespace :update_rankings do
         rank = results_page.ranks_of do |result| 
           begin 
             !result.url.to_s.scan(DOMAIN).blank?
-          rescue
-            # Rescued utf-8 error
+          rescue Exception => e  
             puts "\033[31mException caught for #{kw.name}\033[0m"
+            puts e.message  
+            puts e.backtrace.inspect
             false
           end
         end
