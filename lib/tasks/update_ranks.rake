@@ -7,7 +7,7 @@ namespace :update_rankings do
     Keyword.all.each do |kw|
       GScraper::Search::WebQuery.const_set(:SEARCH_HOST, kw.google_domain)
       GScraper::Search::WebQuery.const_set(:SEARCH_URL, "http://#{kw.google_domain}/search")
-      query = GScraper::Search.query(:query => kw.name, :results_per_page => 100)
+      query = GScraper::Search.query(:query => kw.name, :results_per_page => 500)
       results_page = query.page(1) rescue nil
       if results_page.present?
         rank = results_page.ranks_of do |result| 
