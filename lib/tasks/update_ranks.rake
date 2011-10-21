@@ -12,7 +12,7 @@ namespace :update_rankings do
       if results_page.present?
         rank = results_page.ranks_of do |result| 
           begin 
-            !result.url.to_s.scan(DOMAIN).blank?
+            !result.url.host.scan(DOMAIN).blank?
           rescue Exception => e  
             puts "\033[31mException caught for #{kw.name}\033[0m"
             puts e.message  

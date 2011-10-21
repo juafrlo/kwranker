@@ -1,3 +1,32 @@
 // Place all the styles related to the measurements controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#hor-zebra {
+    border-collapse: collapse;
+    font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
+    font-size: 12px;
+    margin: 20px;
+    text-align: left;
+    width: 480px;
+}
+#hor-zebra th {
+    color: #003399;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 10px 8px;
+}
+#hor-zebra td {
+    color: #666699;
+    padding: 8px;
+}
+#hor-zebra .odd {
+    background: none repeat scroll 0 0 #E8EEEE;
+}
+
+
+tr:hover{
+  background-color: #D0DAFD !important;
+  cursor: pointer;
+}

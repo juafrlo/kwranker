@@ -1,15 +1,20 @@
-<h1>Rankings</h1>
+<center>
+  <h1>Rankings</h1>
 
-<table>
-  <tr>
-    <th style="width: 200px">Keywords</th>
-    <th style="width: 200px, align: left;">Rank</th>
-  </tr>
-
-<% @measurements.each do |measurement| %>
-  <tr>
-    <td><%= measurement.keyword.name %></td>
-    <td><%= measurement.value %></td>
-  </tr>
-<% end %>
-</table>
+  <table id="hor-zebra">
+    <thead>
+      <tr>
+        <th>Keywords</th>
+        <th>Rank</th>
+        <th>Last update</th>
+      </tr>
+    </thead>
+  <% @measurements.each do |measurement| %>
+    <tr class="<%=cycle('odd','')%>">
+      <td><%= measurement.keyword.name %></td>
+      <td><%= measurement.value.blank? ? '-' :  measurement.value %></td>
+      <td><%= l(measurement.updated_at, :format => :short) %></td>
+    </tr>
+  <% end %>
+  </table>
+</center>
