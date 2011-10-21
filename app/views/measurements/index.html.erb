@@ -12,7 +12,7 @@
   <% @measurements.each do |measurement| %>
     <tr class="<%=cycle('odd','')%>">
       <td><%= measurement.keyword.name %></td>
-      <td><%= measurement.value.blank? ? '-' :  measurement.value %></td>
+      <td><%= pretty_measurerement(measurement.value) %></td>
       <td><%= l(measurement.updated_at, :format => :short) %></td>
     </tr>
   <% end %>

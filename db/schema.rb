@@ -10,13 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111020142907) do
+ActiveRecord::Schema.define(:version => 20111021100044) do
 
   create_table "keywords", :force => true do |t|
     t.string   "name"
     t.string   "google_domain"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "latest_measurement"
   end
 
   create_table "measurements", :force => true do |t|

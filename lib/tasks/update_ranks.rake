@@ -22,7 +22,9 @@ namespace :update_rankings do
         end
       end
       rank = rank.try(:first) 
-      Measurement.create(:keyword_id => kw.id, :value => rank.to_i == 0 ? nil : rank)
+      m = Measurement.create(:keyword_id => kw.id, :value => rank.to_i == 0 ? nil : rank)
+      kw.latest_measurement = m.id
+      kw.save      
       puts "\033[32mRank for #{kw.name} is #{rank.to_i}\033[0m"
     end
   end

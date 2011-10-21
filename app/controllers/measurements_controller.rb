@@ -5,7 +5,7 @@ class MeasurementsController < ApplicationController
   # GET /measurements
   # GET /measurements.json
   def index
-    @measurements = Keyword.latest_measurements
+    @measurements = Keyword.find(:all, :include => :latest_m).map(&:latest_m)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @measurements }
