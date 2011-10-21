@@ -16,6 +16,7 @@ class MeasurementsController < ApplicationController
   # GET /measurements/1.json
   def show
     @measurement = Measurement.find(params[:id])
+    @keyword = @measurement.keyword
 
     respond_to do |format|
       format.html # show.html.erb

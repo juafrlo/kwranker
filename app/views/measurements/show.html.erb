@@ -1,15 +1,18 @@
-<p id="notice"><%= notice %></p>
+<center>
+  <h1><%= @keyword.name %></h1>
+  <div id="measure">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Keyword:</b>
-  <%= @measurement.keyword_id %>
-</p>
+    <br/>
+    <p>
+      <b><%= t('latest_value')%>:</b>
+      <%= @measurement.value %>
+    </p>
 
-<p>
-  <b>Value:</b>
-  <%= @measurement.value %>
-</p>
+    <div id="chart_div" style="width:800; height:600"></div>
 
 
-<%= link_to 'Edit', edit_measurement_path(@measurement) %> |
-<%= link_to 'Back', measurements_path %>
+    <%= link_to t('back'), measurements_path %>
+  </div>
+</center>
+

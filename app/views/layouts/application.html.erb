@@ -5,6 +5,11 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  
+  <%= render 'measurements/draw_graph' if controller_name == 'measurements' && action_name == 'show' %>
+
+
+  
 </head>
 <body>
 

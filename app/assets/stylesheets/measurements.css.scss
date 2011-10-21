@@ -3,10 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
 #hor-zebra {
-    border-collapse: collapse;
     font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
     font-size: 12px;
+    border-collapse: collapse;
     margin: 20px;
     text-align: left;
     width: 480px;
@@ -29,4 +30,10 @@
 tr:hover{
   background-color: #D0DAFD !important;
   cursor: pointer;
+}
+
+
+#measure{
+  font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
+  font-size: 12px !important;
 }

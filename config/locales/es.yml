@@ -1,0 +1,9 @@
+es:
+ date:
+   formats:
+     short: "%e-%m-%Y"
+ view_graph: 'Ver gráfico'
+ graph: "Gráfico"
+ last_update: "Última actualización"
+ latest_value: "Último valor"
+ back: "Volver"

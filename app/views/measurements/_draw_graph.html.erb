@@ -1,0 +1,23 @@
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Date');
+        data.addColumn('number', 'Ranking');
+        data.addRows(30);
+        
+        <% measures = @keyword.measurements %>
+        
+        <% for day in 0..30 %>
+          <% if measures[day] %>
+            data.setValue(<%= day %>,0, '<%=l(measures[day].updated_at.to_date, :format => :short).to_s%>');
+            data.setValue(<%= day %>,1, <%= measures[day].value.to_i %>);
+          <% end %>
+        <% end %>
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, {width: 700, height: 380, title: ''});
+      }
+</script>

@@ -6,14 +6,16 @@
       <tr>
         <th>Keywords</th>
         <th>Rank</th>
-        <th>Last update</th>
+        <th><%= t('last_update') %></th>
+        <th><%= t('graph') %></th>
       </tr>
     </thead>
   <% @measurements.each do |measurement| %>
     <tr class="<%=cycle('odd','')%>">
       <td><%= measurement.keyword.name %></td>
       <td><%= pretty_measurerement(measurement.value) %></td>
-      <td><%= l(measurement.updated_at, :format => :short) %></td>
+      <td><%= l(measurement.updated_at.to_date, :format => :short) %></td>
+      <td><%= link_to t('view_graph'), measurement %></td>
     </tr>
   <% end %>
   </table>
