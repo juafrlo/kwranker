@@ -4,7 +4,3 @@ Know the position on google results for a keyword for a domain.
 Run "rake update_rankings:google" to update the ranking for the keywords you have set.
 By default, kwranker has a http basic protection.
 Edit config/environments for your needs.
-
-
-== About the creator
-You can contact me through Github private messaging or through my different personal projects, like http://www.juandefrias.com
