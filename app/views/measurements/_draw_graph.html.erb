@@ -8,7 +8,7 @@
         data.addColumn('number', 'Ranking');
         data.addRows(30);
         
-        <% measures = @keyword.measurements %>
+        <% measures = @keyword.last_30_measurements %>
         
         <% for day in 0..30 %>
           <% if measures[day] %>
