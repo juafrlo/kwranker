@@ -13,7 +13,13 @@
         <% for day in 0..30 %>
           <% if measures[day] %>
             data.setValue(<%= day %>,0, '<%=l(measures[day].updated_at.to_date, :format => :short).to_s%>');
-            data.setValue(<%= day %>,1, <%= measures[day].value.to_i %>);
+            <% if day > 0 && measures[day].value.to_i == 0 && measures[day-1].present? && measures[day-1].to_i != 0 %>
+              <% value = measures[day-1].value.to_i %>
+            <% else %>
+              <% value = measures[day].value.to_i %>
+            <% end %>
+            data.setValue(<%= day %>,1, <%= value %>);
+            <% end %> 
           <% end %>
         <% end %>
 
