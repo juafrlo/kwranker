@@ -11,8 +11,22 @@
 
     <div id="chart_div" style="width:800; height:600"></div>
 
-
     <%= link_to t('back'), measurements_path %>
+
+    <table id="hor-zebra">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+    <% @measures.reverse.each do |measurement| %>
+      <tr class="<%=cycle('odd','')%>">
+        <td><%= l(measurement.updated_at.to_date, :format => :short).to_s%></td>
+        <td><%= measurement.value %></td>
+      </tr>
+    <% end %>
+    </table>
   </div>
 </center>
 

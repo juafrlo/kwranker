@@ -17,7 +17,8 @@ class MeasurementsController < ApplicationController
   def show
     @measurement = Measurement.find(params[:id])
     @keyword = @measurement.keyword
-
+    @measures = @keyword.last_30_measurements
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @measurement }
