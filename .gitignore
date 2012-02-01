@@ -5,3 +5,4 @@ tmp/
 .sass-cache/
 config/database.yml
 config/initializers/setup.rb
+script/deploy.rb
