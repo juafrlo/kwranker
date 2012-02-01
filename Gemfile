@@ -30,7 +30,7 @@ gem 'jquery-rails'
 
 # To use debugger
 group :development do
-  gem 'ruby-debug'
+  gem 'ruby-debug19'
 end
 
 
